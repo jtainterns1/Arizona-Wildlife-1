@@ -18,9 +18,42 @@ h1 {
 h4 {
     color: rgb(236, 204, 136);
     font-family: Georgia, 'Times New Roman', Times, serif;
-    height: 20px;
-    margin-top: 280px;
     width: 35%;
-    float: right;
+    position: fixed;
+    top: 280px;
+    right: 120px;
 }
+
+/* links */
+.LinktoHome {
+  color: rgb(236, 204, 136);
+  font-size: 13px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  position: fixed;
+  top: 20px;
+  right: 500px;
+  text-decoration: none;
+}
+
+.LinktoFeed {
+  color: rgb(236, 204, 136);
+  font-size: 13px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  position: fixed;
+  top: 20px;
+  right: 350px;
+  text-decoration: none;
+}
+
+.LinktoFAQ {
+  color: rgb(236, 204, 136);
+  font-size: 13px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  position: fixed;
+  top: 20px;
+  right: 200px;
+  text-decoration: none;
+}
+
+
 
