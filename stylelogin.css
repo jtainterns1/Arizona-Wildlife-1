@@ -1,0 +1,15 @@
+body {
+    background-color: #ab5c2e; 
+  }
+  
+  /* title */
+  h1 {
+      color: #ffffff;
+      font-size: 60px;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      position: fixed;
+      text-align: center;
+      height: 20px;
+      margin-top: 170px;
+      width: 45%
+  }
