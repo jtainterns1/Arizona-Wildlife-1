@@ -1,0 +1,26 @@
+/* background color */
+body {
+  background-color: #ab5c2e; 
+}
+
+/* title */
+h1 {
+    color: #ffffff;
+    font-size: 60px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    float: right;
+    height: 20px;
+    margin-top: 170px;
+    width: 45%
+}
+
+/* subtitle description */
+h4 {
+    color: rgb(236, 204, 136);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    height: 20px;
+    margin-top: 280px;
+    width: 35%;
+    float: right;
+}
+
