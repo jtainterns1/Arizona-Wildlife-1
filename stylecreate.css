@@ -1,0 +1,60 @@
+body {
+    background-color: #ab5c2e; 
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .account_container {
+    text-align: left;
+  }
+
+  .LoginHeader {
+    color: #ffffff;
+    font-size: 40px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* margin-bottom: 20px; */
+  }
+  
+  .login_items {
+    color: white;
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .login_items p {
+    margin: 10px 0 5px 0;
+  }
+  
+  .login_items input {
+    /* margin-bottom: 15px; */
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #ffffff;
+    color: #ab5c2e;
+    border: none;
+    cursor: pointer;
+  }
+
+  a {
+    color: rgb(236, 204, 136);
+    font-size: 13px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-decoration: none;
+    position: fixed;
+    top: 20px;
+  }
+
+  .back {
+    top: 400px;
+  }
