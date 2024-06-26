@@ -1,0 +1,40 @@
+body {
+    background-color: #ab5c2e; 
+  }
+
+  a {
+    color: rgb(236, 204, 136);
+    font-size: 13px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-decoration: none;
+    position: fixed;
+    top: 20px;
+  }
+  
+  .LinktoHome {
+    right: 500px;
+  }
+  
+  .LinktoFeed {
+    right: 350px;
+  }
+  
+  .LinktoExplore {
+    right: 200px;
+  }
+  
+  .LinktoFAQ {
+    right: 50px;
+  }
+
+  .createAccount {
+    top: 530px;
+  }
+  
+.LinktoExplore:hover,
+.LinktoFeed:hover,
+.LinktoHome:hover,
+.LinktoFAQ:hover,
+.exploretext:hover {
+    color: rgb(218, 152, 28);
+}
