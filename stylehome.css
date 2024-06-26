@@ -8,19 +8,25 @@ h1 {
     color: #ffffff;
     font-size: 60px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    float: right;
+    display: flex;
+    justify-content: right;
+    margin-top: 180px;
+    /* margin-right: 120px; */
+    /* float: right;
     margin-top: 170px;
-    width: 45%;
+    width: 45%; */
 }
 
 /* Subtitle styling */
-h4 {
+.subtitle {
     color: rgb(236, 204, 136);
     font-family: Georgia, 'Times New Roman', Times, serif;
-    width: 35%;
-    position: fixed;
-    top: 280px;
-    right: 160px;
+    /* top: 280px;
+    right: 160px; */
+    display: flex;
+    justify-content: right;
+
+
 }
 
 /* Link styling */
@@ -41,8 +47,12 @@ a {
   right: 350px;
 }
 
-.LinktoFAQ {
+.LinktoExplore {
   right: 200px;
+}
+
+.LinktoFAQ {
+  right: 50px;
 }
 
 /* Rectangle styling */
@@ -58,7 +68,7 @@ a {
 
 /* Slideshow container styling */
 .slideshow-container {
-  position: fixed;
+  position: absolute;
   top: 160px;
   left: 130px;
   width: 30%;
@@ -129,7 +139,7 @@ a {
 .dots {
   text-align: center;
   padding: 20px;
-  position: fixed;
+  position: absolute;
   top: 420px;
   left: 120px;
   width: 30%;
@@ -138,5 +148,40 @@ a {
 .active,
 .dot:hover {
   background-color: #717171;
+}
+
+.LinktoExplore:hover,
+.LinktoFeed:hover,
+.LinktoHome:hover,
+.LinktoFAQ:hover,
+.exploretext:hover {
+    color: rgb(218, 152, 28);
+}
+
+.explorebar {
+  width: 100%;
+  height: 35px;
+  background: rgb(234, 188, 89);
+  border-radius: 15px 50px 30px 5px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  top: 150px;
+  left: 80px;
+}
+
+.exploretext {
+  color: rgb(0, 0, 0);
+  font-size: 15px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  top: 10px;
 }
 
