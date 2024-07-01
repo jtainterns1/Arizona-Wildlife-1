@@ -24,15 +24,14 @@
         <h5 class="LoginHeader"> Login </h5>
         <form method="post" action="login.php">
         <div class="login_items">
-            <form action="user" method="GET">
-                <p> Username: </p>
-                <input type="text" required>
-            </form>
-            <form action="pass" method="GET">
-                <p> Password: </p>
-                <input type="password" required>
-            </form>
+            <p> Username: </p>
+            <input type="text" name="username" required>
+
+            <p> Password: </p>
+            <input type="password" name="password" required>
+            
             <button type="submit">Login</button>
+
             <a class="createAccount" href="http://127.0.0.1/createaccount.html">
                 Create an Account!
             </a>
