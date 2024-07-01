@@ -1,4 +1,16 @@
-<!-- <!DOCTYPE html>
+<?php
+session_start(); // Ensure session is started
+
+// Check if user is logged in
+if (!isset($_SESSION['username'])) {
+    // Redirect or handle accordingly if not logged in
+    // For example:
+    header("Location: http://127.0.0.1/login.html");
+    exit();
+}
+?>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -25,4 +37,4 @@
     <p>Logged in as:
         
     </p>
-</html> -->
+</html>

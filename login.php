@@ -44,7 +44,7 @@ if ($stmt->fetch()) {
         session_start();
         $_SESSION['user_id'] = $user_id;
         $_SESSION['username'] = $username;
-        header("Location: http://127.0.0.1/Home.html");
+        header("Location: http://127.0.0.1/myfeed.html");
         exit();
     } else {
         // Password is incorrect
