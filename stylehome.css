@@ -2,149 +2,148 @@
 
 /* Title styling */
 h1 {
-    color: #ffffff;
-    font-size: 60px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    display: flex;
-    justify-content: right;
-    margin-top: 180px;
-    /* margin-right: 120px; */
-    /* float: right;
-    margin-top: 170px;
-    width: 45%; */
+  color: #ffffff;
+  font-size: 60px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  display: flex;
+  justify-content: right;
+  margin-top: 180px;
+  /* margin-right: 120px; */
+  /* float: right;
+  margin-top: 170px;
+  width: 45%; */
 }
 
 /* Subtitle styling */
 .subtitle {
-    color: rgb(236, 204, 136);
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    /* top: 280px;
-    right: 160px; */
-    display: flex;
-    justify-content: right;
+  color: rgb(236, 204, 136);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  /* top: 280px;
+  right: 160px; */
+  display: flex;
+  justify-content: right;
 
 
 }
 
 /* Rectangle styling */
 .rectangle {
-  width: 50px;
-  height: 750px;
-  background: rgb(234, 188, 89);
-  border-radius: 15px 50px 30px 5px;
-  position: absolute;
-  top: 20px;
-  left: 20px;
+width: 50px;
+height: 750px;
+background: rgb(234, 188, 89);
+border-radius: 15px 50px 30px 5px;
+position: absolute;
+top: 20px;
+left: 20px;
 }
 
 /* Slideshow container styling */
 .slideshow-container {
-  position: absolute;
-  top: 160px;
-  left: 130px;
-  width: 30%;
+position: absolute;
+top: 160px;
+left: 130px;
+width: 30%;
 }
 
 /* Hide all slides by default */
 .mySlides {
-  display: none;
+display: none;
 }
 
 /* Slideshow image styling */
 .slideshow-image {
-  width: 100%;
-  height: 300px;
+width: 100%;
+height: 300px;
 }
 
 /* Next & previous buttons */
 .prev,
 .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  user-select: none;
+cursor: pointer;
+position: absolute;
+top: 50%;
+width: auto;
+padding: 16px;
+margin-top: -22px;
+color: white;
+font-weight: bold;
+font-size: 18px;
+user-select: none;
 }
 
 .next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
+right: 0;
+border-radius: 3px 0 0 3px;
 }
 
 .prev {
-  left: 0;
-  border-radius: 0 3px 3px 0;
+left: 0;
+border-radius: 0 3px 3px 0;
 }
 
 .prev:hover,
 .next:hover {
-  background-color: rgba(0,0,0,0.8);
+background-color: rgba(0,0,0,0.8);
 }
 
 /* Number text */
 .numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
+color: #f2f2f2;
+font-size: 12px;
+padding: 8px 12px;
+position: absolute;
+top: 0;
 }
 
 /* Dot indicators */
 .dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
+cursor: pointer;
+height: 15px;
+width: 15px;
+margin: 0 2px;
+background-color: #bbb;
+border-radius: 50%;
+display: inline-block;
+transition: background-color 0.6s ease;
 }
 
 .dots {
-  text-align: center;
-  padding: 20px;
-  position: absolute;
-  top: 420px;
-  left: 120px;
-  width: 30%;
+text-align: center;
+padding: 20px;
+position: absolute;
+top: 420px;
+left: 120px;
+width: 30%;
 }
 
 .active,
 .dot:hover {
-  background-color: #717171;
+background-color: #717171;
 }
 
 .explorebar {
-  width: 100%;
-  height: 35px;
-  background: rgb(234, 188, 89);
-  border-radius: 15px 50px 30px 5px;
-  position: relative;
-  z-index: 2;
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  top: 150px;
-  left: 80px;
+width: 100%;
+height: 35px;
+background: rgb(234, 188, 89);
+border-radius: 15px 50px 30px 5px;
+position: relative;
+z-index: 2;
+display: flex;
+align-content: center;
+justify-content: center;
+top: 150px;
+left: 80px;
 }
 
 .exploretext {
-  color: rgb(0, 0, 0);
-  font-size: 15px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  text-decoration: none;
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  top: 10px;
+color: rgb(0, 0, 0);
+font-size: 15px;
+font-family: Georgia, 'Times New Roman', Times, serif;
+text-decoration: none;
+position: relative;
+z-index: 1;
+display: flex;
+align-content: center;
+justify-content: center;
+top: 10px;
 }
-
