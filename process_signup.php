@@ -1,5 +1,4 @@
 <?php
-
 // Validate form data
 if (empty($_POST["first"]) || empty($_POST["last"]) || empty($_POST["email"]) || empty($_POST["phone"]) || empty($_POST["user"]) || empty($_POST["pass"])) {
     die("All fields are required");
@@ -33,7 +32,9 @@ $stmt->bind_param("ssssss", $firstname, $lastname, $email, $phone, $username, $p
 
 // Execute statement
 if ($stmt->execute()) {
-    echo "New record created successfully";
+    // Registration successful, redirect to login page
+    header("Location: http://127.0.0.1/login.html");
+    exit();
 } else {
     echo "Error: " . $stmt->error;
 }
@@ -41,3 +42,4 @@ if ($stmt->execute()) {
 $stmt->close();
 $conn->close();
 ?>
+
