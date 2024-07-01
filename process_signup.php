@@ -4,17 +4,17 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 // Validate form data
-if (empty($_POST["first"]) || empty($_POST["last"]) || empty($_POST["email"]) || empty($_POST["phone"]) || empty($_POST["user"]) || empty($_POST["pass"])) {
+if (empty($_POST["firstname"]) || empty($_POST["lastname"]) || empty($_POST["email"]) || empty($_POST["phone"]) || empty($_POST["username"]) || empty($_POST["password_hash"])) {
     die("All fields are required");
 }
 
 // Sanitize inputs
-$firstname = htmlspecialchars($_POST["first"]);
-$lastname = htmlspecialchars($_POST["last"]);
+$firstname = htmlspecialchars($_POST["firstname"]);
+$lastname = htmlspecialchars($_POST["lastname"]);
 $email = htmlspecialchars($_POST["email"]);
 $phone = htmlspecialchars($_POST["phone"]);
-$username = htmlspecialchars($_POST["user"]);
-$password = password_hash($_POST["pass"], PASSWORD_DEFAULT);
+$username = htmlspecialchars($_POST["username"]);
+$password = password_hash($_POST["password_hash"], PASSWORD_DEFAULT);
 
 // Timestamp for registration date
 $reg_date = date('Y-m-d H:i:s');
