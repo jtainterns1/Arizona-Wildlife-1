@@ -1,8 +1,8 @@
 <?php
 // Validate form data
-if (empty($_POST["first"]) || empty($_POST["last"]) || empty($_POST["email"]) || empty($_POST["phone"]) || empty($_POST["user"]) || empty($_POST["pass"])) {
-    die("All fields are required");
-}
+// if (empty($_POST["first"]) || empty($_POST["last"]) || empty($_POST["email"]) || empty($_POST["phone"]) || empty($_POST["user"]) || empty($_POST["pass"])) {
+//     die("All fields are required");
+// }
 
 // Sanitize inputs
 $firstname = htmlspecialchars($_POST["first"]);
