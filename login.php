@@ -13,7 +13,7 @@ $username = htmlspecialchars($_POST["username"]);
 $password = $_POST["password"]; // Password is already hashed in database
 
 // Database connection parameters
-$servername = "localhost";
+$servername = "192.168.83.16";
 $username_db = "karina"; // Replace with your database username
 $password_db = "ArizonaWildlife1!"; // Replace with your database password
 $database = "wildlife_db";
