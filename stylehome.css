@@ -26,16 +26,6 @@ h1 {
 
 }
 
-/* Rectangle styling */
-.rectangle {
-width: 50px;
-height: 750px;
-background: rgb(234, 188, 89);
-border-radius: 15px 50px 30px 5px;
-position: absolute;
-top: 20px;
-left: 20px;
-}
 
 /* Slideshow container styling */
 .slideshow-container {
