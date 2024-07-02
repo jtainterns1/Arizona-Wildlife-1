@@ -42,7 +42,7 @@ if ($stmt->fetch()) {
     if (password_verify($password, $hashed_password)) {
         // Password is correct, set session variables and redirect to home page or dashboard
         session_start();
-        $_SESSION['id'] = $user_id;
+        $_SESSION['user_id'] = $user_id;
         $_SESSION['username'] = $username;
         header("Location: myfeed.html");
         exit();

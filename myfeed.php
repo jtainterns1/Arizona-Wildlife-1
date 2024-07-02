@@ -8,6 +8,11 @@ if (!isset($_SESSION['username'])) {
     header("Location: http://127.0.0.1/login.html");
     exit();
 }
+
+$username = $_SESSION['username'];
+
+// Example: Display logged-in user's username
+echo "$username 's feed!";
 ?>
 
 <!DOCTYPE html>
@@ -19,22 +24,30 @@ if (!isset($_SESSION['username'])) {
     <link rel="stylesheet" href="standard.css">
 </head>
 <body>
-    <h1> Feed </h1>
-    <a class="LinktoHome" href="http://127.0.0.1/Home.html">
-        Home
-    </a>
-    <a class="LinktoFeed" href="http://127.0.0.1/login.html">
-        My Feed
-    </a>
-    <a class="LinktoExplore" href="http://127.0.0.1/explore.html">
-        Explore
-    </a>
-    <a class="LinktoFAQ" href="http://127.0.0.1/faq.html">
-        FAQ
-    </a>
+    <h5> Feed </h5>
+    <div class="rectangle"></div>
+    <div class="sidebar">
+        <button class="LinktoHome" href= "http://127.0.0.1/Home.html">
+            <img src= "home.png">
+        </button>
+        <button class="LinktoProfile" href= "http://127.0.0.1/myprofile.html">
+            <img src= "profile.png">
+        </button>
+        <button class="LinktoExplore" href= "http://127.0.0.1/explore.html">
+            <img src= "search.png">
+        </button>
+        <button class="LinktoFeed" href= "http://127.0.0.1/myfeed.html">
+            <img src= "feed.jfif">
+        </button>
+        <button class="LinktoPost" href= "http://127.0.0.1/post.html">
+            <img src= "post.png">
+        </button>
+        <button class="LinktoFAQ" href= "http://127.0.0.1/faq.html">
+            <img src= "faq.png">
+        </button>
+        <button class="LinktoLogin" href= "logout.php">
+            <img src= "logout.png">
+        </button>
+    </div>
 </body>
-    <h5>Feed</h5>
-    <p>Logged in as:
-        
-    </p>
 </html>
