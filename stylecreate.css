@@ -83,7 +83,7 @@
     font-weight: bold;
   }
 
-  button {
+  .loginbutton {
     color: #ab5c2e;
     border: none;
     border-radius: 5px;

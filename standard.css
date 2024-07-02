@@ -19,7 +19,7 @@ body {
   }
 
   .createAccount {
-    top: 530px;
+    top: 540px;
   }
   
   .sidebar {
@@ -51,5 +51,6 @@ body {
 
   .createAccount,
   .exploretext:hover {
-      color: rgb(218, 152, 28);
+      text-decoration: none;
+      color: rgb(245, 187, 78);
   }

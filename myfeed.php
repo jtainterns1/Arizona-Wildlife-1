@@ -37,7 +37,7 @@ echo "$username 's feed!";
             <img src="search.png">
         </button>
         <button class="LinktoFeed" onclick="navigateTo('http://127.0.0.1/myfeed.php')">
-            <img src="feed.jfif">
+            <img src="myfeed.png">
         </button>
         <button class="LinktoPost" onclick="navigateTo('http://127.0.0.1/post.html')">
             <img src="post.png">
