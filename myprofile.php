@@ -23,21 +23,35 @@ echo "Welcome, $username";
     <link rel="stylesheet" href="standard.css">
 </head>
 <body>
-    <a class="LinktoHome" href="http://127.0.0.1/Home.html">
-        Home
-    </a>
-    <a class="LinktoFeed" href="http://127.0.0.1/login.html">
-        My Feed
-    </a>
-    <a class="LinktoExplore" href="http://127.0.0.1/explore.html">
-        Explore
-    </a>
-    <a class="LinktoFAQ" href="http://127.0.0.1/faq.html">
-        FAQ
-    </a>
+<div class="rectangle"></div>
+    <div class="sidebar">
+        <button class="LinktoHome" onclick="navigateTo('http://127.0.0.1/Home.html')">
+            <img src="home.png">
+        </button>
+        <button class="LinktoProfile" onclick="navigateTo('http://127.0.0.1/myprofile.php')">
+            <img src="profile.png">
+        </button>
+        <button class="LinktoExplore" onclick="navigateTo('http://127.0.0.1/explore.html')">
+            <img src="search.png">
+        </button>
+        <button class="LinktoFeed" onclick="navigateTo('http://127.0.0.1/myfeed.php')">
+            <img src="feed.jfif">
+        </button>
+        <button class="LinktoPost" onclick="navigateTo('http://127.0.0.1/post.html')">
+            <img src="post.png">
+        </button>
+        <button class="LinktoFAQ" onclick="navigateTo('http://127.0.0.1/faq.html')">
+            <img src="faq.png">
+        </button>
+        <button class="LinktoLogin" onclick="navigateTo('logout.php')">
+            <img src="logout.png">
+        </button>
+    </div>
+    
+    <script>
+        function navigateTo(url) {
+            window.location.href = url;
+        }
+    </script>
 </body>
-    <h5>Profile</h5>
-    <p>
-        
-    </p>
 </html>
