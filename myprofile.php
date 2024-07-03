@@ -42,7 +42,7 @@ echo "Welcome, $username";
         <button class="LinktoFeed" onclick="navigateTo('http://127.0.0.1/myfeed.php')">
             <img src="myfeed.png">
         </button>
-        <button class="LinktoPost" onclick="navigateTo('http://127.0.0.1/post.html')">
+        <button class="LinktoPost" onclick="navigateTo('http://127.0.0.1/createpost.html')">
             <img src="post.png">
         </button>
         <button class="LinktoFAQ" onclick="navigateTo('http://127.0.0.1/faq.html')">
