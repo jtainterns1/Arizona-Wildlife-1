@@ -1,29 +1,14 @@
-<?php
-session_start(); // Ensure session is started
-
-// Check if user is logged in
-if (!isset($_SESSION['username'])) {
-    // Redirect or handle accordingly if not logged in
-    // For example:
-    header("Location: http://127.0.0.1/login.html");
-    exit();
-}
-
-$username = $_SESSION['username'];
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arizona Wildlife - My Feed</title>
+    <title>Arizona Wildlife - Create a Post</title>
     <link rel="stylesheet" href="standard.css">
+    <link rel="stylesheet" href="stylecreatepost.css">
+
 </head>
 <body>
-<div class="feed-header">
-        Feed
-    </div>
     <div class="rectangle"></div>
     <div class="sidebar">
         <button class="LinktoHome" onclick="navigateTo('http://127.0.0.1/Home.html')">
@@ -48,26 +33,25 @@ $username = $_SESSION['username'];
             <img src="logout.png">
         </button>
     </div>
-    <div class="feed-container">
-        <!-- Placeholder posts -->
-        <div class="post">
-            <div class="post-header">
-                <img src="profile1.jpg" alt="Profile Picture">
-                <span>Username</span>
-            </div>
-            <div class="post-content">
-                <!-- Placeholder for image, adjust size as needed -->
-                <div style="height: 300px; background-color: #ccc;"></div>
-            </div>
-            <div class="post-actions">
-                <button class="like-btn">Like</button>
-                <button class="comment-btn">Comment</button>
-            </div>
-        </div>
+    
     <script>
         function navigateTo(url) {
             window.location.href = url;
         }
     </script>
+    <div class="container">
+        <h1>Create a Post</h1>
+        <form id="postForm" action="process_post.php" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="caption">Caption</label>
+                <input type="text" id="caption" name="caption" placeholder="Enter caption" required>
+            </div>
+            <div class="form-group">
+                <label for="image">Image</label>
+                <input type="file" id="image" name="image" accept="image/*" required>
+            </div>
+            <button type="submit">Post</button>
+        </form>
+    </div>
 </body>
 </html>

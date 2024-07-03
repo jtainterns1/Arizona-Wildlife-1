@@ -10,6 +10,10 @@ if (!isset($_SESSION['username'])) {
 }
 
 $username = $_SESSION['username'];
+$firstname = $_SESSION['firstname']; // Replace with actual session variable names
+$lastname = $_SESSION['lastname']; // Replace with actual session variable names
+$email = $_SESSION['email']; // Replace with actual session variable names
+$phone = $_SESSION['phone']; // Replace with actual session variable names
 
 echo "Welcome, $username";
 ?>
@@ -21,6 +25,7 @@ echo "Welcome, $username";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arizona Wildlife - My Profile</title>
     <link rel="stylesheet" href="standard.css">
+    <link rel="stylesheet" href="styleprofile.css">
 </head>
 <body>
 <div class="rectangle"></div>
@@ -47,7 +52,15 @@ echo "Welcome, $username";
             <img src="logout.png">
         </button>
     </div>
-    
+    <div class="profile-container">
+        <h1>My Profile</h1>
+        <div class="profile-info">
+            <p><strong>Username:</strong> <?php echo $username; ?></p>
+            <p><strong>Name:</strong> <?php echo "$firstname $lastname"; ?></p>
+            <p><strong>Email:</strong> <?php echo $email; ?></p>
+            <p><strong>Phone:</strong> <?php echo $phone; ?></p>
+        </div>
+    </div>
     <script>
         function navigateTo(url) {
             window.location.href = url;
