@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arizona Wildlife - Explore</title>
     <link rel="stylesheet" href="standard.css">
+    <link rel="stylesheet" href="styleexplore.css">
 </head>
 <body>
     <div class="rectangle"></div>
@@ -31,12 +32,43 @@
             <img src="logout.png">
         </button>
     </div>
-    
+    <h3 class="ExploreHeader">Explore!</h3>
+
+    <!-- Grid for clickable images -->
+    <div class="grid-container">
+        <div class="grid-item">
+            <img src="coyote.jpg" onclick="navigateTo('image1.html')" alt="Image 1">
+        </div>
+        <div class="grid-item">
+            <img src="bobcat.jfif" onclick="navigateTo('image2.html')" alt="Image 2">
+        </div>
+        <div class="grid-item">
+            <img src="ferret.jpg" onclick="navigateTo('image3.html')" alt="Image 3">
+        </div>
+        <div class="grid-item">
+            <img src="horned.jpg" onclick="navigateTo('image3.html')" alt="Image 3">
+        </div>
+        <div class="grid-item">
+            <img src="gilamonster.jpg" onclick="navigateTo('image3.html')" alt="Image 3">
+        </div>
+        <div class="grid-item">
+            <img src="javelina.jpeg" onclick="navigateTo('image3.html')" alt="Image 3">
+        </div>
+        <div class="grid-item">
+            <img src="rattlesnake.jfif" onclick="navigateTo('image3.html')" alt="Image 3">
+        </div>
+        <div class="grid-item">
+            <img src="roadrunner.jpg" onclick="navigateTo('image3.html')" alt="Image 3">
+        </div>
+        <div class="grid-item">
+            <img src="scorpion.jpg" onclick="navigateTo('image3.html')" alt="Image 3">
+        </div>
+        <!-- Add more grid items as needed -->
+    </div>
     <script>
         function navigateTo(url) {
             window.location.href = url;
         }
     </script>
-    <h3 class="ExploreHeader"> Login </h3>
 </body>
 </html>

@@ -1,0 +1,28 @@
+.ExploreHeader {
+    text-align: center;
+    color: white;
+    font-size: 36px;
+    margin-top: 50px; /* Adjust as needed */
+}
+
+/* Grid layout for clickable images */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 20px auto; /* Center the grid horizontally with auto margins */
+    padding: 0 20px;
+    max-width: 1000px; /* Limit the grid width */
+}
+
+.grid-item {
+    text-align: center;
+}
+
+.grid-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    cursor: pointer;
+    max-width: 100%; /* Ensure images don't exceed their container */
+}

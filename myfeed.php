@@ -24,7 +24,9 @@ echo "$username 's feed!";
     <link rel="stylesheet" href="standard.css">
 </head>
 <body>
-    <h5> Feed </h5>
+<div class="feed-header">
+        Feed
+    </div>
     <div class="rectangle"></div>
     <div class="sidebar">
         <button class="LinktoHome" onclick="navigateTo('http://127.0.0.1/Home.html')">
@@ -49,7 +51,22 @@ echo "$username 's feed!";
             <img src="logout.png">
         </button>
     </div>
-    
+    <div class="feed-container">
+        <!-- Placeholder posts -->
+        <div class="post">
+            <div class="post-header">
+                <img src="profile1.jpg" alt="Profile Picture">
+                <span>Username</span>
+            </div>
+            <div class="post-content">
+                <!-- Placeholder for image, adjust size as needed -->
+                <div style="height: 300px; background-color: #ccc;"></div>
+            </div>
+            <div class="post-actions">
+                <button class="like-btn">Like</button>
+                <button class="comment-btn">Comment</button>
+            </div>
+        </div>
     <script>
         function navigateTo(url) {
             window.location.href = url;
