@@ -14,14 +14,12 @@ body {
 .LoginHeader {
   color: #ffffff;
   font-size: 60px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   margin-bottom: 20px;
 }
 
 .login_items {
   color: white;
   font-size: 20px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;

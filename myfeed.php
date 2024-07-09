@@ -1,7 +1,7 @@
 <?php
 session_start(); // Ensure session is started
 
-// Check if user is logged in
+// // Check if user is logged in
 if (!isset($_SESSION['username'])) {
     // Redirect or handle accordingly if not logged in
     // For example:
@@ -10,6 +10,7 @@ if (!isset($_SESSION['username'])) {
 }
 
 $username = $_SESSION['username'];
+// $result = $post->get_posts($username, $_POST);
 ?>
 
 <!DOCTYPE html>

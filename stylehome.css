@@ -4,7 +4,6 @@
 h1 {
   color: #ffffff;
   font-size: 60px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   display: flex;
   justify-content: right;
   margin-top: 180px;
@@ -17,7 +16,6 @@ h1 {
 /* Subtitle styling */
 .subtitle {
   color: rgb(236, 204, 136);
-  font-family: Georgia, 'Times New Roman', Times, serif;
   /* top: 280px;
   right: 160px; */
   display: flex;
@@ -128,7 +126,6 @@ left: 80px;
 .exploretext {
 color: rgb(0, 0, 0);
 font-size: 15px;
-font-family: Georgia, 'Times New Roman', Times, serif;
 text-decoration: none;
 position: relative;
 z-index: 1;
@@ -136,4 +133,9 @@ display: flex;
 align-content: center;
 justify-content: center;
 top: 10px;
+transition: color 0.3s ease;
+}
+
+.exploretext:hover {
+  color:#ca8963;
 }
