@@ -12,15 +12,14 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 // Validate form data
-if (empty($_POST["image_url"])) {
-    die("Image URL is required.");
+if (empty($_POST["caption"])) {
+    die("Caption is required.");
 }
 
 // Retrieve and sanitize inputs
 $user_id = $_SESSION["user_id"]; // Assuming you have stored user_id in session
 $username = $_SESSION["username"];
 $caption = htmlspecialchars($_POST["caption"]);
-$image_url = ""; // Initialize to empty string for now, since you're handling file upload separately
 $likes = 0; // Initialize likes to 0
 $comments = 0; // Initialize comments to 0
 $time_stamp = date('Y-m-d H:i:s');
@@ -78,3 +77,4 @@ if ($stmt->execute()) {
 $stmt->close();
 $conn->close();
 ?>
+
