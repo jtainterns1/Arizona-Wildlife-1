@@ -3,8 +3,7 @@ session_start(); // Ensure session is started
 
 // Check if user is logged in
 if (!isset($_SESSION['username'])) {
-    // Redirect or handle accordingly if not logged in
-    // For example:
+    // Redirect if not logged in
     header("Location: http://127.0.0.1/login.html");
     exit();
 }
@@ -12,7 +11,7 @@ if (!isset($_SESSION['username'])) {
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-Validate form data
+// Validate form data
 if (empty($_POST["image_url"])) {
     die("Image URL is required.");
 }
@@ -30,16 +29,16 @@ $time_stamp = date('Y-m-d H:i:s');
 if (isset($_FILES['image_url'])) {
     $file_name = $_FILES['image_url']['name'];
     $file_tmp = $_FILES['image_url']['tmp_name'];
-    $file_type = $_FILES['image_url']['type'];
     $file_size = $_FILES['image_url']['size'];
     
-    // Check file size (example check, adjust as needed)
+    // Check file size (adjust as needed)
     if ($file_size > 2097152) { // 2 MB
         die('File size exceeds limit.');
     }
     
     // Upload directory (make sure this directory exists and is writable)
-    $file_path = "/var/html/image-uploads"
+    $upload_dir = "/var/html/image-uploads/"; // Adjust path as needed
+    $file_path = $upload_dir . basename($file_name);
     
     // Move uploaded file to specified directory
     if (move_uploaded_file($file_tmp, $file_path)) {
@@ -73,7 +72,7 @@ if ($stmt->execute()) {
     header("Location: http://127.0.0.1/myfeed.php");
     exit();
 } else {
-    die("Error: " . $stmt->error);
+    echo "Error: " . $stmt->error;
 }
 
 $stmt->close();
