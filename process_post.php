@@ -10,9 +10,9 @@ if (!isset($_SESSION['username'])) {
 }
 
 // Validate form data
-if (empty($_POST["image_url"])) {
-    die("Image URL is required.");
-}
+// if (empty($_POST["image_url"])) {
+//     die("Image URL is required.");
+// }
 
 // Retrieve and sanitize inputs
 $user_id = $_SESSION["user_id"]; // Assuming you have stored user_id in session
