@@ -9,6 +9,9 @@ if (!isset($_SESSION['username'])) {
     exit();
 }
 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 Validate form data
 if (empty($_POST["image_url"])) {
     die("Image URL is required.");
@@ -24,7 +27,7 @@ $comments = 0; // Initialize comments to 0
 $time_stamp = date('Y-m-d H:i:s');
 
 // File upload handling
-if (isset($_FILES['imag_url'])) {
+if (isset($_FILES['image_url'])) {
     $file_name = $_FILES['image_url']['name'];
     $file_tmp = $_FILES['image_url']['tmp_name'];
     $file_type = $_FILES['image_url']['type'];
@@ -36,8 +39,7 @@ if (isset($_FILES['imag_url'])) {
     }
     
     // Upload directory (make sure this directory exists and is writable)
-    $upload_dir = "uploads/";
-    $file_path = $upload_dir . $file_name;
+    $file_path = "/var/html/image-uploads"
     
     // Move uploaded file to specified directory
     if (move_uploaded_file($file_tmp, $file_path)) {
@@ -71,7 +73,7 @@ if ($stmt->execute()) {
     header("Location: http://127.0.0.1/myfeed.php");
     exit();
 } else {
-    echo "Error: " . $stmt->error;
+    die("Error: " . $stmt->error);
 }
 
 $stmt->close();

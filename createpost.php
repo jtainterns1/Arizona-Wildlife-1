@@ -1,3 +1,18 @@
+<?php
+session_start(); // Ensure session is started
+
+// // Check if user is logged in
+if (!isset($_SESSION['username'])) {
+    // Redirect or handle accordingly if not logged in
+    // For example:
+    header("Location: http://127.0.0.1/login.html");
+    exit();
+}
+
+$username = $_SESSION['username'];
+// $result = $post->get_posts($username, $_POST);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,7 +56,7 @@
     </script>
     <div class="container">
         <h1>Create a Post</h1>
-        <form id="postForm" action="process_post.php" method="POST" enctype="multipart/form-data">
+        <form method="post" action="process_post.php">
             <div class="form-group">
                 <label for="image_url">Upload Image</label>
                 <input type="file" id="image_url" name="image_url" accept="image/*" required>

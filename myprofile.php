@@ -15,7 +15,6 @@ $lastname = $_SESSION['lastname']; // Replace with actual session variable names
 $email = $_SESSION['email']; // Replace with actual session variable names
 $phone = $_SESSION['phone']; // Replace with actual session variable names
 
-echo "Welcome, $username";
 ?>
 
 <!DOCTYPE html>
