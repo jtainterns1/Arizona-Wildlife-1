@@ -18,10 +18,6 @@ body {
     width: 60px;
     height: 60px;
   }
-
-  .createAccount {
-    top: 540px;
-  }
   
   .sidebar {
     position: absolute;
@@ -49,9 +45,3 @@ body {
 .sidebar button:hover {
     opacity: 0.7;
 }
-
-  .createAccount,
-  .exploretext:hover {
-      text-decoration: none;
-      color: rgb(245, 187, 78);
-  }
