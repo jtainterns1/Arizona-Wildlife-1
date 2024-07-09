@@ -63,7 +63,7 @@ if ($conn->connect_error) {
 
 // Prepare and bind parameters for SQL query
 $stmt = $conn->prepare("INSERT INTO posts (user_id, caption, image_url, likes, comments, time_stamp) VALUES (?, ?, ?, ?, ?, ?)");
-$stmt->bind_param("isssss", $user_id, $caption, $image_url, $likes, $comments, $time_stamp);
+$stmt->bind_param("issiis", $user_id, $caption, $image_url, $likes, $comments, $time_stamp);
 
 // Execute statement
 if ($stmt->execute()) {
