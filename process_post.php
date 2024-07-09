@@ -9,10 +9,10 @@ if (!isset($_SESSION['username'])) {
     exit();
 }
 
-// Validate form data
-// if (empty($_POST["image_url"])) {
-//     die("Image URL is required.");
-// }
+Validate form data
+if (empty($_POST["image_url"])) {
+    die("Image URL is required.");
+}
 
 // Retrieve and sanitize inputs
 $user_id = $_SESSION["user_id"]; // Assuming you have stored user_id in session
@@ -24,11 +24,11 @@ $comments = 0; // Initialize comments to 0
 $time_stamp = date('Y-m-d H:i:s');
 
 // File upload handling
-if (isset($_FILES['image'])) {
-    $file_name = $_FILES['image']['name'];
-    $file_tmp = $_FILES['image']['tmp_name'];
-    $file_type = $_FILES['image']['type'];
-    $file_size = $_FILES['image']['size'];
+if (isset($_FILES['imag_url'])) {
+    $file_name = $_FILES['image_url']['name'];
+    $file_tmp = $_FILES['image_url']['tmp_name'];
+    $file_type = $_FILES['image_url']['type'];
+    $file_size = $_FILES['image_url']['size'];
     
     // Check file size (example check, adjust as needed)
     if ($file_size > 2097152) { // 2 MB
