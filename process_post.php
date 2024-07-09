@@ -39,6 +39,7 @@ if (isset($_FILES['image_url'])) {
     // Upload directory (make sure this directory exists and is writable)
     $upload_dir = "/var/html/image-uploads/"; // Adjust path as needed
     $file_path = $upload_dir . basename($file_name);
+    $image_url = $file_path;
     
     // Move uploaded file to specified directory
     if (move_uploaded_file($file_tmp, $file_path)) {
