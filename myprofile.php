@@ -41,7 +41,7 @@ $phone = $_SESSION['phone']; // Replace with actual session variable names
         <button class="LinktoFeed" onclick="navigateTo('http://127.0.0.1/myfeed.php')">
             <img src="myfeed.png">
         </button>
-        <button class="LinktoPost" onclick="navigateTo('http://127.0.0.1/createpost.html')">
+        <button class="LinktoPost" onclick="navigateTo('http://127.0.0.1/createpost.php')">
             <img src="post.png">
         </button>
         <button class="LinktoFAQ" onclick="navigateTo('http://127.0.0.1/faq.html')">
@@ -54,10 +54,10 @@ $phone = $_SESSION['phone']; // Replace with actual session variable names
     <div class="profile-container">
         <h1>My Profile</h1>
         <div class="profile-info">
-            <p><strong>Username:</strong> <?php echo $username; ?></p>
-            <p><strong>Name:</strong> <?php echo "$firstname $lastname"; ?></p>
-            <p><strong>Email:</strong> <?php echo $email; ?></p>
-            <p><strong>Phone:</strong> <?php echo $phone; ?></p>
+            <p><strong>Username:</strong> <?php session_start(); echo $username; ?></p>
+            <p><strong>Name:</strong> <?php session_start(); echo "$firstname $lastname"; ?></p>
+            <p><strong>Email:</strong> <?php session_start(); echo $email; ?></p>
+            <p><strong>Phone:</strong> <?php session_start(); echo $phone; ?></p>
         </div>
     </div>
     <script>

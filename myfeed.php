@@ -39,7 +39,7 @@ $username = $_SESSION['username'];
         <button class="LinktoFeed" onclick="navigateTo('http://127.0.0.1/myfeed.php')">
             <img src="myfeed.png">
         </button>
-        <button class="LinktoPost" onclick="navigateTo('http://127.0.0.1/createpost.html')">
+        <button class="LinktoPost" onclick="navigateTo('http://127.0.0.1/createpost.php')">
             <img src="post.png">
         </button>
         <button class="LinktoFAQ" onclick="navigateTo('http://127.0.0.1/faq.html')">
