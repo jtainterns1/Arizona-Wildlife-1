@@ -67,7 +67,7 @@ $username = $_SESSION['username'];
         <form method="POST" action="process_post.php" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="image_url">Upload Image</label>
-                <input type="file" name="image_url" required>
+                <input type="file" value="image_url" name="image_url" required>
             </div>
             <div class="form-group">
                 <label for="caption">Caption</label>

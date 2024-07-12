@@ -40,7 +40,7 @@ $status = $statusMsg = " ";
 // // Retrieve and sanitize inputs
 $user_id = $_SESSION["user_id"]; // Assuming you have stored user_id in session
 $username = $_SESSION["username"];
-$image_path = $_POST['image_url'];
+$image_url = $_POST['image_url'];
 $caption = htmlspecialchars($_POST["caption"]);
 $likes = 0; // Initialize likes to 0
 $comments = 0; // Initialize comments to 0
@@ -49,7 +49,7 @@ $time_stamp = date('Y-m-d H:i:s');
 // File upload handling
 if (isset($_POST['post!'])) {
     $status = "error";
-    if(!empty[$_FILES["image_url"]["name"]]) {
+    if (!empty($_FILES["image_url"]["name"])) {
         $filename = basename($_FILES["image_url"]["name"]);
         $fileType = pathinfo($filename, PATHINFO_EXTENSION);
         $image = $_FILES["image_url"]["tmp_name"];
@@ -77,7 +77,7 @@ if (isset($_POST['post!'])) {
         $db->close();
     }
     else {
-        $statusMsg = "Failed. No file attached."
+        $statusMsg = "Failed. No file attached.";
     }
     // $filename = $_FILES["image_url"]["name"];
     // $tempname = $_FILES["image_url"]["tmp_name"];
