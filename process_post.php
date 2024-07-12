@@ -59,26 +59,27 @@ if (isset($_POST['post!'])) {
         $stmt->bind_param("issiis", $user_id, $caption, $image_url, $likes, $comments, $time_stamp);
 
         // Execute statement
-        if ($stmt->execute()) {
-            // Post creation successful, redirect to feed page
-            $server_ip = $_SERVER['SERVER_ADDR'];
-            
-            // Construct the redirect URL with the dynamic IP address
-            $redirect_url = "http://$server_ip/myfeed.php";
-            
-            // Redirect to the login page
-            header("Location: $redirect_url");
-            exit();
-        } else {
-            echo "Error: " . $stmt->error;
-        }
-
-        $stmt->close();
-        $db->close();
     }
     else {
         $statusMsg = "Failed. No file attached.";
     }
+
+    if ($stmt->execute()) {
+        // Post creation successful, redirect to feed page
+        $server_ip = $_SERVER['SERVER_ADDR'];
+        
+        // Construct the redirect URL with the dynamic IP address
+        $redirect_url = "http://$server_ip/myfeed.php";
+        
+        // Redirect to the login page
+        header("Location: $redirect_url");
+        exit();
+    } else {
+        echo "Error: " . $stmt->error;
+    }
+
+    $stmt->close();
+    $db->close();
     // $filename = $_FILES["image_url"]["name"];
     // $tempname = $_FILES["image_url"]["tmp_name"];
     // $folder = "/var/www/html/image-uploads/" . $filename;
