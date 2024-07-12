@@ -28,7 +28,7 @@
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
     <div class="explorebar">
-        <a class="exploretext" href="http://127.0.0.1/explore.html">
+        <a class="exploretext" onclick="navigateTo('explore.html')">
             Explore
         </a>
     </div>
@@ -43,22 +43,22 @@
     <script src="slideshow.js"></script>
     <div class="rectangle"></div>
     <div class="sidebar">
-        <button class="LinktoHome" onclick="navigateTo('http://127.0.0.1/Home.html')">
+        <button class="LinktoHome" onclick="navigateTo('Home.html')">
             <img src="home.png">
         </button>
-        <button class="LinktoProfile" onclick="navigateTo('http://127.0.0.1/myprofile.php')">
+        <button class="LinktoProfile" onclick="navigateTo('myprofile.php')">
             <img src="profile.png">
         </button>
-        <button class="LinktoExplore" onclick="navigateTo('http://127.0.0.1/explore.html')">
+        <button class="LinktoExplore" onclick="navigateTo('explore.html')">
             <img src="search.png">
         </button>
-        <button class="LinktoFeed" onclick="navigateTo('http://127.0.0.1/myfeed.php')">
+        <button class="LinktoFeed" onclick="navigateTo('myfeed.php')">
             <img src="myfeed.png">
         </button>
-        <button class="LinktoPost" onclick="navigateTo('http://127.0.0.1/createpost.php')">
+        <button class="LinktoPost" onclick="navigateTo('createpost.php')">
             <img src="post.png">
         </button>
-        <button class="LinktoFAQ" onclick="navigateTo('http://127.0.0.1/faq.html')">
+        <button class="LinktoFAQ" onclick="navigateTo('faq.html')">
             <img src="faq.png">
         </button>
         <button class="LinktoLogin" onclick="navigateTo('logout.php')">
@@ -67,7 +67,10 @@
     </div>
     
     <script>
-        function navigateTo(url) {
+        function navigateTo(path) {
+        // Get the current hostname (including IP address)
+            var hostname = window.location.hostname;
+            var url = 'http://' + hostname + '/' + path;
             window.location.href = url;
         }
     </script>

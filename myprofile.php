@@ -1,11 +1,15 @@
 <?php
 session_start(); // Ensure session is started
-
-// Check if user is logged in
+// // Check if user is logged in
 if (!isset($_SESSION['username'])) {
-    // Redirect or handle accordingly if not logged in
-    // For example:
-    header("Location: http://127.0.0.1/login.html");
+    // Get the current server's IP address dynamically
+    $server_ip = $_SERVER['SERVER_ADDR'];
+    
+    // Construct the redirect URL with the dynamic IP address
+    $redirect_url = "http://$server_ip/login.html";
+    
+    // Redirect to the login page
+    header("Location: $redirect_url");
     exit();
 }
 
@@ -28,29 +32,38 @@ $phone = $_SESSION['phone']; // Replace with actual session variable names
 </head>
 <body>
 <div class="rectangle"></div>
-    <div class="sidebar">
-        <button class="LinktoHome" onclick="navigateTo('http://127.0.0.1/Home.html')">
+<div class="sidebar">
+        <button class="LinktoHome" onclick="navigateTo('Home.html')">
             <img src="home.png">
         </button>
-        <button class="LinktoProfile" onclick="navigateTo('http://127.0.0.1/myprofile.php')">
+        <button class="LinktoProfile" onclick="navigateTo('myprofile.php')">
             <img src="profile.png">
         </button>
-        <button class="LinktoExplore" onclick="navigateTo('http://127.0.0.1/explore.html')">
+        <button class="LinktoExplore" onclick="navigateTo('explore.html')">
             <img src="search.png">
         </button>
-        <button class="LinktoFeed" onclick="navigateTo('http://127.0.0.1/myfeed.php')">
+        <button class="LinktoFeed" onclick="navigateTo('myfeed.php')">
             <img src="myfeed.png">
         </button>
-        <button class="LinktoPost" onclick="navigateTo('http://127.0.0.1/createpost.php')">
+        <button class="LinktoPost" onclick="navigateTo('createpost.php')">
             <img src="post.png">
         </button>
-        <button class="LinktoFAQ" onclick="navigateTo('http://127.0.0.1/faq.html')">
+        <button class="LinktoFAQ" onclick="navigateTo('faq.html')">
             <img src="faq.png">
         </button>
         <button class="LinktoLogin" onclick="navigateTo('logout.php')">
             <img src="logout.png">
         </button>
     </div>
+    
+    <script>
+        function navigateTo(path) {
+        // Get the current hostname (including IP address)
+            var hostname = window.location.hostname;
+            var url = 'http://' + hostname + '/' + path;
+            window.location.href = url;
+        }
+    </script>
     <div class="profile-container">
         <h1>My Profile</h1>
         <div class="profile-info">
@@ -60,10 +73,5 @@ $phone = $_SESSION['phone']; // Replace with actual session variable names
             <p><strong>Phone:</strong> <?php session_start(); echo $phone; ?></p>
         </div>
     </div>
-    <script>
-        function navigateTo(url) {
-            window.location.href = url;
-        }
-    </script>
 </body>
 </html>
