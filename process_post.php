@@ -25,6 +25,7 @@ if (empty($_POST["caption"])) {
 // Retrieve and sanitize inputs
 $user_id = $_SESSION["user_id"]; // Assuming you have stored user_id in session
 $username = $_SESSION["username"];
+$image_path = $_POST['image_url'];
 $caption = htmlspecialchars($_POST["caption"]);
 $likes = 0; // Initialize likes to 0
 $comments = 0; // Initialize comments to 0
@@ -71,7 +72,7 @@ $database = "wildlife_db";
     $db = mysqli_connect($servername, $username_db, $password_db, $database);
  
     // Get all the submitted data from the form
-    $sql = "INSERT INTO posts (user_id, caption, image_url, likes, comments, time_stamp) VALUES (?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO posts (user_id, caption, image_path, likes, comments, time_stamp) VALUES (?, ?, ?, ?, ?, ?)";
  
     // Execute query
     mysqli_query($db, $sql);
