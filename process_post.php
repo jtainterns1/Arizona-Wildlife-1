@@ -17,12 +17,27 @@ if (!isset($_SESSION['username'])) {
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
+// Database connection details
+$servername = "localhost";
+$username_db = "karina"; // Replace with your database username
+$password_db = "ArizonaWildlife1!"; // Replace with your database password
+$database = "wildlife_db";
+
+//connection
+$db = new mysqli($servername, $username_db, $password_db, $database);
+
+if ($db->connect_error) {
+    die("Connection failed: " . $db->connect_error);
+}
+
 // Validate form data
 if (empty($_POST["caption"])) {
     die("Caption is required.");
 }
 
-// Retrieve and sanitize inputs
+$status = $statusMsg = " ";
+
+// // Retrieve and sanitize inputs
 $user_id = $_SESSION["user_id"]; // Assuming you have stored user_id in session
 $username = $_SESSION["username"];
 $image_path = $_POST['image_url'];
@@ -32,11 +47,29 @@ $comments = 0; // Initialize comments to 0
 $time_stamp = date('Y-m-d H:i:s');
 
 // File upload handling
-// File upload handling
 if (isset($_POST['post!'])) {
-    $filename = $_FILES["image_url"]["name"];
-    $tempname = $_FILES["image_url"]["tmp_name"];
-    $folder = "/var/www/html/image-uploads/" . $filename;
+    $status = "error";
+    if(!empty[$_FILES["image_url"]["name"]]) {
+        $filename = basename($_FILES["image_url"]["name"]);
+        $fileType = pathinfo($filename, PATHINFO_EXTENSION);
+        $image = $_FILES["image_url"]["tmp_name"];
+        $imgContent = addslashes(file_get_contents($image));
+
+        $insert = $db->query("INSERT INTO posts (user_id, caption, image_path, likes, comments, time_stamp) VALUES ('".$imgContent."', NOW()) ");
+        if ($insert){
+            $status = 'success';
+            $statusMSg = "Upload Successful";
+        }
+        else {
+            $statusMsg = "Db insert Failed."
+        }
+    }
+    else {
+        $statusMsg = "Failed. No file attached."
+    }
+    // $filename = $_FILES["image_url"]["name"];
+    // $tempname = $_FILES["image_url"]["tmp_name"];
+    // $folder = "/var/www/html/image-uploads/" . $filename;
     
     // Check file size (adjust as needed)
     $file_size = $_FILES['image_url']['size'];
@@ -51,6 +84,7 @@ if (isset($_POST['post!'])) {
         echo "Failed to upload file.";
     }
 
+}
     
     // Upload directory (make sure this directory exists and is writable)
     // $upload_dir = "/var/html/image-uploads/"; // Adjust path as needed
@@ -63,30 +97,12 @@ if (isset($_POST['post!'])) {
     // } else {
     //     die('Error uploading file.');
     // }
-
-    // Database connection details
-$servername = "localhost";
-$username_db = "karina"; // Replace with your database username
-$password_db = "ArizonaWildlife1!"; // Replace with your database password
-$database = "wildlife_db";
-    $db = mysqli_connect($servername, $username_db, $password_db, $database);
+    // // Get all the submitted data from the form
+    // $sql = "INSERT INTO posts (user_id, caption, image_path, likes, comments, time_stamp) VALUES (?, ?, ?, ?, ?, ?)";
  
-    // Get all the submitted data from the form
-    $sql = "INSERT INTO posts (user_id, caption, image_path, likes, comments, time_stamp) VALUES (?, ?, ?, ?, ?, ?)";
- 
-    // Execute query
-    mysqli_query($db, $sql);
- 
-}
+//     // Execute query
+//     mysqli_query($db, $sql);
 
-
-// // Create connection
-// $conn = new mysqli($servername, $username_db, $password_db, $database);
-
-// // Check connection
-// if ($conn->connect_error) {
-//     die("Connection failed: " . $conn->connect_error);
-// }
 
 // // Prepare and bind parameters for SQL query
 // $stmt = $conn->prepare("INSERT INTO posts (user_id, caption, image_url, likes, comments, time_stamp) VALUES (?, ?, ?, ?, ?, ?)");
