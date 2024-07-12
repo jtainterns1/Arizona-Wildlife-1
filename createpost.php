@@ -56,16 +56,16 @@ $username = $_SESSION['username'];
     </script>
     <div class="container">
         <h1>Create a Post</h1>
-        <form method="post" action="process_post.php">
+        <form method="POST" action="process_post.php" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="image_url">Upload Image</label>
-                <input type="file" id="image_url" name="image_url" accept="image/*" required>
+                <input type="file" name="image_url" required>
             </div>
             <div class="form-group">
                 <label for="caption">Caption</label>
                 <input type="text" id="caption" name="caption" placeholder="Enter caption">
             </div>
-            <input type="submit" class="button" value="Post" name="post">
+            <input type="submit" class="button" value="Post" name="post!">
         </form>
     </div>
 </body>
