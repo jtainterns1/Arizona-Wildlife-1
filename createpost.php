@@ -73,7 +73,7 @@ $username = $_SESSION['username'];
                 <label for="caption">Caption</label>
                 <input type="text" id="caption" name="caption" placeholder="Enter caption">
             </div>
-            <input type="submit" class="button" value="Post" name="post!">
+            <input type="submit" class="button" value="post!" name="post!">
         </form>
     </div>
 </body>
