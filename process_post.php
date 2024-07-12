@@ -56,13 +56,6 @@ if (isset($_POST['post!'])) {
         $imgContent = addslashes(file_get_contents($image));
 
         $insert = $db->query("INSERT INTO posts (user_id, caption, image_path, likes, comments, time_stamp) VALUES ('".$imgContent."', NOW()) ");
-        if ($insert){
-            $status = 'success';
-            $statusMSg = "Upload Successful";
-        }
-        else {
-            $statusMsg = "Db insert Failed."
-        }
     }
     else {
         $statusMsg = "Failed. No file attached."
@@ -105,7 +98,7 @@ if (isset($_POST['post!'])) {
 
 
 // // Prepare and bind parameters for SQL query
-$stmt = $conn->prepare("INSERT INTO posts (user_id, caption, image_url, likes, comments, time_stamp) VALUES (?, ?, ?, ?, ?, ?)");
+$stmt = $db->prepare("INSERT INTO posts (user_id, caption, image_url, likes, comments, time_stamp) VALUES (?, ?, ?, ?, ?, ?)");
 $stmt->bind_param("issiis", $user_id, $caption, $image_url, $likes, $comments, $time_stamp);
 
 // Execute statement
@@ -124,6 +117,6 @@ if ($stmt->execute()) {
 }
 
 $stmt->close();
-$conn->close();
+$db->close();
 ?>
 
