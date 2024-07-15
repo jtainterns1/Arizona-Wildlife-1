@@ -27,12 +27,13 @@ h1 {
 
 /* Slideshow container styling */
 .slideshow-container {
-position: absolute;
-top: 160px;
-left: 130px;
-width: 30%;
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding-top: 20px; /* Adjust top padding as needed */
 }
-
 /* Hide all slides by default */
 .mySlides {
 display: none;
@@ -84,7 +85,7 @@ top: 0;
 }
 
 /* Dot indicators */
-.dot {
+/* .dot {
 cursor: pointer;
 height: 15px;
 width: 15px;
@@ -102,7 +103,7 @@ position: absolute;
 top: 420px;
 left: 120px;
 width: 30%;
-}
+} */
 
 .active,
 .dot:hover {
