@@ -1,44 +1,35 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0; /* optional */
+}
+
 .feed-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding-top: 20px;
-    overflow-y: scroll; /* Enable scrolling for the feed */
-    height: calc(100vh - 80px); /* Adjust height based on your design */
+    width: 80%; /* Adjust width as needed */
+    max-width: 800px; /* Optional: Set a maximum width */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds container height */
+    max-height: 70vh; /* Limit height and enable scrolling */
+    margin-top: 20px; /* Adjust margin top as needed */
 }
 
 .post {
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    padding: 10px;
-    background-color: #f9f9f9;
-}
-.post-header img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-.post-header span {
-    font-weight: bold;
-}
-.post-content {
-    margin-top: 10px;
+    border-bottom: 1px solid #ddd; /* Border between posts */
+    padding-bottom: 10px; /* Optional: Add padding between posts */
+    margin-bottom: 20px; /* Optional: Adjust margin bottom between posts */
 }
 
-.post-actions {
-    display: flex;
-    align-items: center;
+.post h3 {
+    margin-top: 0;
+    font-size: 18px;
 }
 
-.like-btn, .comment-btn {
-    margin-right: 10px;
-    cursor: pointer;
-}
-
-/* Adjustments for the feed header */
-.feed-header {
-    text-align: center;
-    color: #fff;
-    font-size: 24px;
-    margin-top: 20px;
+.post p {
+    margin-bottom: 5px;
+    font-size: 14px;
 }

@@ -43,7 +43,7 @@
             window.location.href = url;
         }
     </script>
-
+</div>
 <?php
 session_start(); // Ensure session is started
 ini_set('display_errors', 1);
@@ -83,23 +83,28 @@ $username = $_SESSION['username'];
     $sql = "SELECT * FROM posts ORDER BY time_stamp DESC"; // Assuming you want to display posts in descending order of timestamp
     
     $result = $db->query($sql);
-    
-    if ($result->num_rows > 0) {
-        // Output data of each row
-        while($row = $result->fetch_assoc()) {
-            // Display caption and any other details you want
-            echo "<div>";
-            echo "<h3>" . htmlspecialchars($row["caption"]) . "</h3>";
-            echo "<p>Posted by: " . htmlspecialchars($row["user_id"]) . "</p>"; // Assuming you have stored username in posts table
-            echo "<p>Posted on: " . htmlspecialchars($row["time_stamp"]) . "</p>";
-            echo "</div>";
+    ?>
+
+    <div class="feed-container">
+        <?php
+        session_start();
+        if ($result->num_rows > 0) {
+            // Output data of each row
+            while($row = $result->fetch_assoc()) {
+                // Display caption and any other details you want
+                echo "<div>";
+                echo "<h3>" . htmlspecialchars($row["caption"]) . "</h3>";
+                echo "<p>Posted by: " . htmlspecialchars($row["user_id"]) . "</p>"; // Assuming you have stored username in posts table
+                echo "<p>Posted on: " . htmlspecialchars($row["time_stamp"]) . "</p>";
+                echo "</div>";
+            }
+        } else {
+            echo "No posts found.";
         }
-    } else {
-        echo "No posts found.";
-    }
+        $db->close();
+        ?>
+    </div>
     
-    $db->close();
-?>
     <!-- <div class="feed-container">
         
         <div class="post">
