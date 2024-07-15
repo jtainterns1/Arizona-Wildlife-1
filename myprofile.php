@@ -85,7 +85,7 @@
         echo "My Profile";
         echo "<p>Username: ". htmlspecialchars($row["username"]) . "</h3>";
             echo "<p>First Name : " . htmlspecialchars($row["firstname"]) . "</p>";
-            echo "<p>First Name : " . htmlspecialchars($row["lastname"]) . "</p>";
+            echo "<p>Last Name : " . htmlspecialchars($row["lastname"]) . "</p>";
             echo "<p>Email : ". htmlspecialchars($row["email"]) . "</p>";
             echo "<p>Phone : " . htmlspecialchars($row["phone"]) . "</p>";
             echo "</div>";
