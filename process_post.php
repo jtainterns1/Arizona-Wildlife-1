@@ -40,7 +40,7 @@ $status = $statusMsg = " ";
 // // Retrieve and sanitize inputs
 $user_id = $_SESSION["user_id"]; // Assuming you have stored user_id in session
 $username = $_SESSION["username"];
-// $image_url = $_POST['image_url'];
+$image_url = "";
 $caption = htmlspecialchars($_POST["caption"]);
 $likes = 0; // Initialize likes to 0
 $comments = 0; // Initialize comments to 0
@@ -62,8 +62,8 @@ $time_stamp = date('Y-m-d H:i:s');
 //     }
 // }
 
-$stmt = $db->prepare("INSERT INTO posts (user_id, caption, likes, comments, time_stamp) VALUES (?, ?, ?, ?, ?)");
-$stmt->bind_param("isiis", $user_id, $caption, $likes, $comments, $time_stamp);
+$stmt = $db->prepare("INSERT INTO posts (user_id, caption, image_url, likes, comments, time_stamp) VALUES (?, ?, ?, ?, ?, ?)");
+$stmt->bind_param("issiis", $user_id, $caption, $image_url, $likes, $comments, $time_stamp);
 
     if ($stmt->execute()) {
         // // Post creation successful, redirect to feed page
@@ -73,7 +73,7 @@ $stmt->bind_param("isiis", $user_id, $caption, $likes, $comments, $time_stamp);
         // $redirect_url = "http://$server_ip/myfeed.php";
         
         // Redirect to the login page
-        header("Location: $redirect_url");
+        header("Location: myfeed.php");
         exit();
     } else {
         echo "Error: " . $stmt->error;
