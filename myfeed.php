@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="stylefeed.css">
 </head>
 <body>
-    <h3 class="feed-header"> Feed </h3>
     <div class="rectangle"></div>
     <div class="sidebar">
         <button class="LinktoHome" onclick="navigateTo('Home.html')">
@@ -85,6 +84,7 @@ $username = $_SESSION['username'];
     ?>
 
     <div class="feed-container">
+    <h5 class="feed-header"> Feed </h5>
         <?php
         if ($result->num_rows > 0) {
             // Output data of each row
