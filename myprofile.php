@@ -67,10 +67,10 @@ $phone = $_SESSION['phone']; // Replace with actual session variable names
     <div class="profile-container">
         <h1>My Profile</h1>
         <div class="profile-info">
-            <p><strong>Username:</strong> <?php session_start(); echo $username; ?></p>
-            <p><strong>Name:</strong> <?php session_start(); echo "$firstname $lastname"; ?></p>
-            <p><strong>Email:</strong> <?php session_start(); echo $email; ?></p>
-            <p><strong>Phone:</strong> <?php session_start(); echo $phone; ?></p>
+            <p><strong>Username:</strong> <?php echo $username; ?></p>
+            <p><strong>Name:</strong> <?php echo $firstname $lastname; ?></p>
+            <p><strong>Email:</strong> <?php echo $email; ?></p>
+            <p><strong>Phone:</strong> <?php echo $phone; ?></p>
         </div>
     </div>
 </body>
