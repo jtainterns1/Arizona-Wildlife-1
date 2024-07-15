@@ -40,29 +40,30 @@ $status = $statusMsg = " ";
 // // Retrieve and sanitize inputs
 $user_id = $_SESSION["user_id"]; // Assuming you have stored user_id in session
 $username = $_SESSION["username"];
-$image_url = $_POST['image_url'];
+// $image_url = $_POST['image_url'];
 $caption = htmlspecialchars($_POST["caption"]);
 $likes = 0; // Initialize likes to 0
 $comments = 0; // Initialize comments to 0
 $time_stamp = date('Y-m-d H:i:s');
 
-// File upload handling
-if (isset($_POST['post!'])) {
-    $status = "error";
-    if (!empty($_FILES["image_url"]["name"])) {
-        $filename = basename($_FILES["image_url"]["name"]);
-        $fileType = pathinfo($filename, PATHINFO_EXTENSION);
-        $image = $_FILES["image_url"]["tmp_name"];
-        $imgContent = addslashes(file_get_contents($image));
+// // File upload handling
+// if (isset($_POST['post!'])) {
+//     $status = "error";
+//     if (!empty($_FILES["image_url"]["name"])) {
+//         $filename = basename($_FILES["image_url"]["name"]);
+//         $fileType = pathinfo($filename, PATHINFO_EXTENSION);
+//         $image = $_FILES["image_url"]["tmp_name"];
+//         $imgContent = addslashes(file_get_contents($image));
 
-        $stmt = $db->prepare("INSERT INTO posts (user_id, caption, image_url, likes, comments, time_stamp) VALUES (?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("issiis", $user_id, $caption, $image_url, $likes, $comments, $time_stamp);
+//         // Execute statement
+//     }
+//     else {
+//         $statusMsg = "Failed. No file attached.";
+//     }
+// }
 
-        // Execute statement
-    }
-    else {
-        $statusMsg = "Failed. No file attached.";
-    }
+$stmt = $db->prepare("INSERT INTO posts (user_id, caption, likes, comments, time_stamp) VALUES (?, ?, ?, ?, ?, ?)");
+$stmt->bind_param("issiis", $user_id, $caption, $likes, $comments, $time_stamp);
 
     if ($stmt->execute()) {
         // Post creation successful, redirect to feed page
@@ -97,7 +98,6 @@ if (isset($_POST['post!'])) {
     //     echo "Failed to upload file.";
     // }
 
-}
     
     // Upload directory (make sure this directory exists and is writable)
     // $upload_dir = "/var/html/image-uploads/"; // Adjust path as needed

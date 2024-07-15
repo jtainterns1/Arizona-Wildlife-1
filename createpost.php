@@ -65,10 +65,10 @@ $username = $_SESSION['username'];
     <div class="container">
         <h1>Create a Post</h1>
         <form method="POST" action="process_post.php" enctype="multipart/form-data">
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label for="image_url">Upload Image</label>
                 <input type="file" value="image_url" name="image_url" required>
-            </div>
+            </div> -->
             <div class="form-group">
                 <label for="caption">Caption</label>
                 <input type="text" id="caption" name="caption" placeholder="Enter caption">
