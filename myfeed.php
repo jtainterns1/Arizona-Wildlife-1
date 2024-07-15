@@ -8,9 +8,7 @@
     <link rel="stylesheet" href="stylefeed.css">
 </head>
 <body>
-<div class="feed-header">
-        Feed
-    </div>
+    <h3 class="feed-header"> Feed </h3>
     <div class="rectangle"></div>
     <div class="sidebar">
         <button class="LinktoHome" onclick="navigateTo('Home.html')">

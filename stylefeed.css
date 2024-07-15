@@ -6,6 +6,13 @@ body {
     margin: 0;
 }
 
+.feed-header {
+    text-align: center;
+    color: white;
+    font-size: 36px;
+    margin-top: 50px; /* Adjust as needed */
+}
+
 .feed-container {
     width: 80%; /* Adjust width as needed */
     max-width: 800px; /* Optional: Set a maximum width */
