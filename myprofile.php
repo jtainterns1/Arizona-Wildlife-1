@@ -1,26 +1,3 @@
-<?php
-session_start(); // Ensure session is started
-// // Check if user is logged in
-if (!isset($_SESSION['username'])) {
-    // Get the current server's IP address dynamically
-    $server_ip = $_SERVER['SERVER_ADDR'];
-    
-    // Construct the redirect URL with the dynamic IP address
-    $redirect_url = "http://$server_ip/login.html";
-    
-    // Redirect to the login page
-    header("Location: $redirect_url");
-    exit();
-}
-
-$username = $_SESSION['username'];
-$firstname = $_SESSION['firstname']; // Replace with actual session variable names
-$lastname = $_SESSION['lastname']; // Replace with actual session variable names
-$email = $_SESSION['email']; // Replace with actual session variable names
-$phone = $_SESSION['phone']; // Replace with actual session variable names
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,14 +41,38 @@ $phone = $_SESSION['phone']; // Replace with actual session variable names
             window.location.href = url;
         }
     </script>
+    <?php
+        session_start(); // Ensure session is started
+        // // Check if user is logged in
+        if (!isset($_SESSION['username'])) {
+            // Get the current server's IP address dynamically
+            $server_ip = $_SERVER['SERVER_ADDR'];
+            
+            // Construct the redirect URL with the dynamic IP address
+            $redirect_url = "http://$server_ip/login.html";
+            
+            // Redirect to the login page
+            header("Location: $redirect_url");
+            exit();
+        }
+
+        $username = $_SESSION['username'];
+        $firstname = $_SESSION['firstname']; // Replace with actual session variable names
+        $lastname = $_SESSION['lastname']; // Replace with actual session variable names
+        $email = $_SESSION['email']; // Replace with actual session variable names
+        $phone = $_SESSION['phone']; // Replace with actual session variable names
+
+    ?>
     <div class="profile-container">
         <h1>My Profile</h1>
-        <div class="profile-info">
-            <p><strong>Username:</strong> <?php echo $username; ?></p>
-            <p><strong>Name:</strong> <?php echo $firstname $lastname; ?></p>
-            <p><strong>Email:</strong> <?php echo $email; ?></p>
-            <p><strong>Phone:</strong> <?php echo $phone; ?></p>
-        </div>
+        <?php
+            echo "<div class='profile-info'>";
+            echo "<p>Username: " $username "</h3>";
+            echo "<p>Name : " $firstname + " " + $lastname"</p>";
+            echo "<p>Email : " $email "</p>";
+            echo "<p>Phone : " $phone "</p>";
+            echo "</div>";
+        ?>
     </div>
 </body>
 </html>
