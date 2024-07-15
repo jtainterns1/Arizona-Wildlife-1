@@ -27,9 +27,11 @@ body {
 }
 
 .post {
+    border: 2px solid;
     border-color:#ab5c2e; /* Border between posts */
     padding-bottom: 20px; /* Optional: Add padding between posts */
     margin-bottom: 25px; /* Optional: Adjust margin bottom between posts */
+    border-radius: 10px;
 }
 
 .post h3 {
