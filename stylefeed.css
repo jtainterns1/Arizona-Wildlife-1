@@ -7,29 +7,22 @@
 }
 
 .post {
-    background-color: #fff;
     margin-bottom: 20px;
+    border: 1px solid #ddd;
     padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
 }
-
-.post-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
-}
-
 .post-header img {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     margin-right: 10px;
 }
-
+.post-header span {
+    font-weight: bold;
+}
 .post-content {
-    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .post-actions {
