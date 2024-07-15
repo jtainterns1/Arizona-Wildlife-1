@@ -43,6 +43,9 @@
     </script>
     <?php
         session_start(); // Ensure session is started
+        ini_set('display_errors', 1);
+        ini_set('display_startup_errors', 1);
+        error_reporting(E_ALL);
         // // Check if user is logged in
         if (!isset($_SESSION['username'])) {
             // Get the current server's IP address dynamically
@@ -62,6 +65,19 @@
         $email = $_SESSION['email']; // Replace with actual session variable names
         $phone = $_SESSION['phone']; // Replace with actual session variable names
 
+                // Database connection details (already connected in your case)
+        $servername = "localhost";
+        $username_db = "karina"; // Replace with your database username
+        $password_db = "ArizonaWildlife1!"; // Replace with your database password
+        $database = "wildlife_db";
+        
+        // Create connection
+        $db = new mysqli($servername, $username_db, $password_db, $database);
+        
+        // Check connection
+        if ($db->connect_error) {
+            die("Connection failed: " . $db->connect_error);
+        }
     ?>
     <div class="profile-container">
         <h1>My Profile</h1>
@@ -72,6 +88,8 @@
             echo "<p>Email : " $email "</p>";
             echo "<p>Phone : " $phone "</p>";
             echo "</div>";
+
+            $db->close();
         ?>
     </div>
 </body>
