@@ -90,7 +90,7 @@ $username = $_SESSION['username'];
             // Output data of each row
             while($row = $result->fetch_assoc()) {
                 // Display caption and any other details you want
-                echo "<div>";
+                echo "<div class='post'>";
                 echo "<h3>" . htmlspecialchars($row["caption"]) . "</h3>";
                 echo "<p>Posted by: " . htmlspecialchars($row["user_id"]) . "</p>"; // Assuming you have stored username in posts table
                 echo "<p>Posted on: " . htmlspecialchars($row["time_stamp"]) . "</p>";
