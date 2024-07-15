@@ -62,8 +62,8 @@ $time_stamp = date('Y-m-d H:i:s');
 //     }
 // }
 
-$stmt = $db->prepare("INSERT INTO posts (user_id, caption, image_url, likes, comments, time_stamp) VALUES (?, ?, ?, ?, ?, ?, ?)");
-$stmt->bind_param("issiis", $user_id, $caption, $image_url, $likes, $comments, $time_stamp);
+$stmt = $db->prepare("INSERT INTO posts (user_id, caption, likes, comments, time_stamp) VALUES (?, ?, ?, ?, ?)");
+$stmt->bind_param("issiis", $user_id, $caption, $likes, $comments, $time_stamp);
 
     if ($stmt->execute()) {
         // // Post creation successful, redirect to feed page
