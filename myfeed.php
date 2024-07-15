@@ -62,7 +62,7 @@ if (!isset($_SESSION['username'])) {
     header("Location: $redirect_url");
     exit();
 }
-// $user_id = $_SESSION['user_id'];
+$user_id = $_SESSION['user_id'];
 $username = $_SESSION['username'];
     
     // Database connection details (already connected in your case)
@@ -80,12 +80,9 @@ $username = $_SESSION['username'];
     }
     
     // Query to fetch posts
-    $sql = "SELECT p.*, u.username 
-            FROM posts p
-            INNER JOIN users u ON p.user_id = u.user_id
-            ORDER BY p.time_stamp DESC"; // Assuming you want to display posts in descending order of timestamp
+    $sql = "SELECT * FROM posts ORDER BY time_stamp DESC"; // Assuming you want to display posts in descending order of timestamp
     
-    $result = $db->query($sql)
+    $result = $db->query($sql);
     
     if ($result->num_rows > 0) {
         // Output data of each row
@@ -93,7 +90,7 @@ $username = $_SESSION['username'];
             // Display caption and any other details you want
             echo "<div>";
             echo "<h3>" . htmlspecialchars($row["caption"]) . "</h3>";
-            echo "<p>Posted by: " . htmlspecialchars($row["username"]) . "</p>"; // Assuming you have stored username in posts table
+            echo "<p>Posted by: " . htmlspecialchars($row["user_id"]) . "</p>"; // Assuming you have stored username in posts table
             echo "<p>Posted on: " . htmlspecialchars($row["time_stamp"]) . "</p>";
             echo "</div>";
         }
