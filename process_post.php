@@ -62,18 +62,18 @@ $time_stamp = date('Y-m-d H:i:s');
 //     }
 // }
 
-$stmt = $db->prepare("INSERT INTO posts (user_id, caption, likes, comments, time_stamp) VALUES (?, ?, ?, ?, ?, ?)");
-$stmt->bind_param("issiis", $user_id, $caption, $likes, $comments, $time_stamp);
+$stmt = $db->prepare("INSERT INTO posts (user_id, caption, image_url, likes, comments, time_stamp) VALUES (?, ?, ?, ?, ?, ?, ?)");
+$stmt->bind_param("issiis", $user_id, $caption, $image_url, $likes, $comments, $time_stamp);
 
     if ($stmt->execute()) {
-        // Post creation successful, redirect to feed page
-        $server_ip = $_SERVER['SERVER_ADDR'];
+        // // Post creation successful, redirect to feed page
+        // $server_ip = $_SERVER['SERVER_ADDR'];
         
-        // Construct the redirect URL with the dynamic IP address
-        $redirect_url = "http://$server_ip/myfeed.php";
+        // // Construct the redirect URL with the dynamic IP address
+        // $redirect_url = "http://$server_ip/myfeed.php";
         
         // Redirect to the login page
-        header("Location: $redirect_url");
+        header("Location: myfeed.php");
         exit();
     } else {
         echo "Error: " . $stmt->error;
