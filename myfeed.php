@@ -1,53 +1,3 @@
-<?php
-session_start(); // Ensure session is started
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-// // Check if user is logged in
-if (!isset($_SESSION['username'])) {
-    // Get the current server's IP address dynamically
-    $server_ip = $_SERVER['SERVER_ADDR'];
-    
-    // Construct the redirect URL with the dynamic IP address
-    $redirect_url = "http://$server_ip/login.html";
-    
-    // Redirect to the login page
-    header("Location: $redirect_url");
-    exit();
-}
-$username = $_SESSION['username'];
-
-// // Database connection details
-// $servername = "localhost";
-// $username_db = "karina"; // Replace with your database username
-// $password_db = "ArizonaWildlife1!"; // Replace with your database password
-// $database = "wildlife_db";
-
-// // Create connection
-// $db = new mysqli($servername, $username_db, $password_db, $database);
-
-// // Check connection
-// if ($db->connect_error) {
-//     die("Connection failed: " . $db->connect_error);
-// }
-
-// // Query to retrieve posts
-// $query = "SELECT p.*, u.username FROM posts p INNER JOIN users u ON p.user_id = u.user_id ORDER BY p.time_stamp DESC";
-// $result = $db->query($query);
-
-// // Initialize an array to store posts
-// $posts = [];
-
-// if ($result->num_rows > 0) {
-//     while ($row = $result->fetch_assoc()) {
-//         $posts[] = $row;
-//     }
-// }
-
-// $db->close();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -93,15 +43,71 @@ $username = $_SESSION['username'];
             window.location.href = url;
         }
     </script>
-    <div class="feed-container">
-        <!-- Placeholder posts -->
+
+<?php
+session_start(); // Ensure session is started
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+// // Check if user is logged in
+if (!isset($_SESSION['username'])) {
+    // Get the current server's IP address dynamically
+    $server_ip = $_SERVER['SERVER_ADDR'];
+    
+    // Construct the redirect URL with the dynamic IP address
+    $redirect_url = "http://$server_ip/login.html";
+    
+    // Redirect to the login page
+    header("Location: $redirect_url");
+    exit();
+}
+$username = $_SESSION['username'];
+    
+    // Database connection details (already connected in your case)
+    $servername = "localhost";
+    $username_db = "karina"; // Replace with your database username
+    $password_db = "ArizonaWildlife1!"; // Replace with your database password
+    $database = "wildlife_db";
+    
+    // Create connection
+    $db = new mysqli($servername, $username_db, $password_db, $database);
+    
+    // Check connection
+    if ($db->connect_error) {
+        die("Connection failed: " . $db->connect_error);
+    }
+    
+    // Query to fetch posts
+    $sql = "SELECT * FROM posts ORDER BY time_stamp DESC"; // Assuming you want to display posts in descending order of timestamp
+    
+    $result = $db->query($sql);
+    
+    if ($result->num_rows > 0) {
+        // Output data of each row
+        while($row = $result->fetch_assoc()) {
+            // Display caption and any other details you want
+            echo "<div>";
+            echo "<h3>" . htmlspecialchars($row["caption"]) . "</h3>";
+            echo "<p>Posted by: " . htmlspecialchars($row["username"]) . "</p>"; // Assuming you have stored username in posts table
+            echo "<p>Posted on: " . htmlspecialchars($row["time_stamp"]) . "</p>";
+            echo "</div>";
+        }
+    } else {
+        echo "No posts found.";
+    }
+    
+    $db->close();
+?>
+    <!-- <div class="feed-container">
+        
         <div class="post">
             <div class="post-header">
                 <img src="profile1.jpg" alt="Profile Picture">
                 <span>Username</span>
             </div>
             <div class="post-content">
-                <!-- Placeholder for image, adjust size as needed -->
+                
                 <div style="height: 300px; background-color: #ccc;"></div>
             </div>
             <div class="post-actions">
@@ -109,6 +115,6 @@ $username = $_SESSION['username'];
                 <button class="comment-btn">Comment</button>
             </div>
         </div>
-    </div>
+    </div> -->
 </body>
 </html>
