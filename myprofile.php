@@ -59,11 +59,11 @@
             exit();
         }
 
-        $username = $_SESSION['username'];
-        $firstname = $_SESSION['firstname']; // Replace with actual session variable names
-        $lastname = $_SESSION['lastname']; // Replace with actual session variable names
-        $email = $_SESSION['email']; // Replace with actual session variable names
-        $phone = $_SESSION['phone']; // Replace with actual session variable names
+        // $username = $_SESSION['username'];
+        // $firstname = $_SESSION['firstname']; // Replace with actual session variable names
+        // $lastname = $_SESSION['lastname']; // Replace with actual session variable names
+        // $email = $_SESSION['email']; // Replace with actual session variable names
+        // $phone = $_SESSION['phone']; // Replace with actual session variable names
 
                 // Database connection details (already connected in your case)
         $servername = "localhost";
@@ -83,10 +83,11 @@
         $result = $db->query($sql);
 
         echo "My Profile";
-        echo "<p>Username: " $username "</h3>";
-            echo "<p>Name : " $firstname + " " + $lastname"</p>";
-            echo "<p>Email : " $email "</p>";
-            echo "<p>Phone : " $phone "</p>";
+        echo "<p>Username: ". htmlspecialchars($row["username"]) . "</h3>";
+            echo "<p>First Name : " . htmlspecialchars($row["firstname"]) . "</p>";
+            echo "<p>First Name : " . htmlspecialchars($row["lastname"]) . "</p>";
+            echo "<p>Email : ". htmlspecialchars($row["email"]) . "</p>";
+            echo "<p>Phone : " . htmlspecialchars($row["phone"]) . "</p>";
             echo "</div>";
 
             $db->close();
