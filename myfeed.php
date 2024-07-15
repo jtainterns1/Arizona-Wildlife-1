@@ -44,7 +44,6 @@ if ($result->num_rows > 0) {
 
 $db->close();
 ?>
-?>
 
 <!DOCTYPE html>
 <html lang="en">
