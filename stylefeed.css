@@ -11,7 +11,9 @@ body {
     color: white;
     font-size: 36px;
     margin-top: 50px; /* Adjust as needed */
+    margin-left: 150px; /* Adjust based on .sidebar width */
 }
+
 
 .feed-container {
     width: 80%; /* Adjust width as needed */
