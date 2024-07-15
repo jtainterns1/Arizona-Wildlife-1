@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arizona Wildlife - My Feed</title>
     <link rel="stylesheet" href="standard.css">
+    <link rel="stylesheet" href="stylefeed.css">
 </head>
 <body>
 <div class="feed-header">
@@ -87,7 +88,6 @@ $username = $_SESSION['username'];
 
     <div class="feed-container">
         <?php
-        session_start();
         if ($result->num_rows > 0) {
             // Output data of each row
             while($row = $result->fetch_assoc()) {
