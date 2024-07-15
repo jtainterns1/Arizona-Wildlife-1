@@ -8,7 +8,7 @@ body {
 
 .feed-header {
     text-align: center;
-    color: white;
+    color: #ab5c2e;
     font-size: 36px;
     margin-top: 50px; /* Adjust as needed */
 }
@@ -16,7 +16,7 @@ body {
 
 .feed-container {
     width: 80%; /* Adjust width as needed */
-    max-width: 800px; /* Optional: Set a maximum width */
+    max-width: 600px; /* Optional: Set a maximum width */
     background-color: #fff;
     overflow-y: auto; /* Enable vertical scrolling if content exceeds container height */
     max-height: 70vh; /* Limit height and enable scrolling */
@@ -27,7 +27,7 @@ body {
 }
 
 .post {
-    border-bottom: 1px solid #ab5c2e; /* Border between posts */
+    border-bottom: 10px #ab5c2e; /* Border between posts */
     padding-bottom: 20px; /* Optional: Add padding between posts */
     margin-bottom: 25px; /* Optional: Adjust margin bottom between posts */
 }
