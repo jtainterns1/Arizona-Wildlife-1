@@ -1,5 +1,8 @@
 <?php
 session_start(); // Ensure session is started
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 // // Check if user is logged in
 if (!isset($_SESSION['username'])) {
@@ -15,34 +18,34 @@ if (!isset($_SESSION['username'])) {
 }
 $username = $_SESSION['username'];
 
-// Database connection details
-$servername = "localhost";
-$username_db = "karina"; // Replace with your database username
-$password_db = "ArizonaWildlife1!"; // Replace with your database password
-$database = "wildlife_db";
+// // Database connection details
+// $servername = "localhost";
+// $username_db = "karina"; // Replace with your database username
+// $password_db = "ArizonaWildlife1!"; // Replace with your database password
+// $database = "wildlife_db";
 
-// Create connection
-$db = new mysqli($servername, $username_db, $password_db, $database);
+// // Create connection
+// $db = new mysqli($servername, $username_db, $password_db, $database);
 
-// Check connection
-if ($db->connect_error) {
-    die("Connection failed: " . $db->connect_error);
-}
+// // Check connection
+// if ($db->connect_error) {
+//     die("Connection failed: " . $db->connect_error);
+// }
 
-// Query to retrieve posts
-$query = "SELECT p.*, u.username FROM posts p INNER JOIN users u ON p.user_id = u.user_id ORDER BY p.time_stamp DESC";
-$result = $db->query($query);
+// // Query to retrieve posts
+// $query = "SELECT p.*, u.username FROM posts p INNER JOIN users u ON p.user_id = u.user_id ORDER BY p.time_stamp DESC";
+// $result = $db->query($query);
 
-// Initialize an array to store posts
-$posts = [];
+// // Initialize an array to store posts
+// $posts = [];
 
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        $posts[] = $row;
-    }
-}
+// if ($result->num_rows > 0) {
+//     while ($row = $result->fetch_assoc()) {
+//         $posts[] = $row;
+//     }
+// }
 
-$db->close();
+// $db->close();
 ?>
 
 <!DOCTYPE html>
