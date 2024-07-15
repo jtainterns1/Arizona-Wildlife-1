@@ -27,7 +27,7 @@ body {
 }
 
 .post {
-    border-bottom: 10px #ab5c2e; /* Border between posts */
+    border-color:#ab5c2e; /* Border between posts */
     padding-bottom: 20px; /* Optional: Add padding between posts */
     margin-bottom: 25px; /* Optional: Adjust margin bottom between posts */
 }
