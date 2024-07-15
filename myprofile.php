@@ -78,19 +78,21 @@
         if ($db->connect_error) {
             die("Connection failed: " . $db->connect_error);
         }
-    ?>
-    <div class="profile-container">
-        <h1>My Profile</h1>
-        <?php
-            echo "<div class='profile-info'>";
-            echo "<p>Username: " $username "</h3>";
+
+        echo "My Profile";
+        echo "<p>Username: " $username "</h3>";
             echo "<p>Name : " $firstname + " " + $lastname"</p>";
             echo "<p>Email : " $email "</p>";
             echo "<p>Phone : " $phone "</p>";
             echo "</div>";
 
             $db->close();
-        ?>
-    </div>
+    ?>
+    <!-- <div class="profile-container">
+        <h1>My Profile</h1>
+       
+            echo "<div class='profile-info'>";
+            
+    </div> -->
 </body>
 </html>
