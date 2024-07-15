@@ -78,6 +78,9 @@
         if ($db->connect_error) {
             die("Connection failed: " . $db->connect_error);
         }
+        $sql = "SELECT * FROM users ORDER BY time_stamp DESC"; // Assuming you want to display posts in descending order of timestamp
+    
+        $result = $db->query($sql);
 
         echo "My Profile";
         echo "<p>Username: " $username "</h3>";
