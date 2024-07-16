@@ -38,11 +38,16 @@
             die("Connection failed: " . $db->connect_error);
         }
 
-        $sql = "SELECT * FROM users"; // Assuming you want to display posts in descending order of timestamp
+        $username = $_SESSION['username'];
+        $stmt = $con->prepare("SELECT * FROM users WHERE username = ?");
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        // $sql = "SELECT * FROM users"; // Assuming you want to display posts in descending order of timestamp
     
-        // $result = $con->query($sql);
-        $result = mysqli_query($con, $sql);
-        // $db->close();
+        // // $result = $con->query($sql);
+        // $result = mysqli_query($con, $sql);
+        // // $db->close();
     ?>
     
     <!DOCTYPE html>
@@ -91,7 +96,7 @@
         <h1 class="profile-header">My Profile</h1>
         <div class='profile-info'>
             <?php
-                while($row = mysqli_fetch_assoc($result)){
+                 $row = $result->fetch_assoc();
             ?>
             <p>Username: <?php echo $row['username']; ?> </p>;
             <p>First Name: <?php echo $row['firstname']; ?> </p>;
@@ -99,9 +104,6 @@
             <p>Email: <?php echo $row['email']; ?> </p>;
             <p>Phone: <?php echo $row['phone']; ?> </p>;
 
-            <?php
-                }
-            ?>
         </div>
     </div>
 </body>
