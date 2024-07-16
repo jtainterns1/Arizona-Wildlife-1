@@ -62,7 +62,7 @@ if (!isset($_SESSION['username'])) {
 }
 $user_id = $_SESSION['user_id'];
 $username = $_SESSION['username'];
-    
+
     // Database connection details (already connected in your case)
     $servername = "localhost";
     $username_db = "karina"; // Replace with your database username
