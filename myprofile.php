@@ -98,11 +98,11 @@
             <?php
                  $row = $result->fetch_assoc();
             ?>
-            <p>Username: <?php echo $row['username']; ?> </p>;
-            <p>First Name: <?php echo $row['firstname']; ?> </p>;
-            <p>Last Name: <?php echo $row['lastname']; ?> </p>;
-            <p>Email: <?php echo $row['email']; ?> </p>;
-            <p>Phone: <?php echo $row['phone']; ?> </p>;
+            <p>Username: <?php echo $row['username'] ?> </p>;
+            <p>First Name: <?php echo $row['firstname'] ?> </p>;
+            <p>Last Name: <?php echo $row['lastname'] ?> </p>;
+            <p>Email: <?php echo $row['email'] ?> </p>;
+            <p>Phone: <?php echo $row['phone'] ?> </p>;
 
         </div>
     </div>
