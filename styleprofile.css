@@ -1,32 +1,39 @@
 body {
-    background-color: #ab5c2e;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    color: white;
 }
+
+.profile-header {
+    text-align: center;
+    color: #ab5c2e;
+    font-size: 36px;
+    margin-top: 50px; /* Adjust as needed */
+}
+
 
 .profile-container {
-    text-align: center;
-    background-color: rgba(234, 188, 89, 0.8);
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    max-width: 600px;
-}
-
-.profile-container h1 {
-    font-size: 2em;
-    margin-bottom: 20px;
+    width: 80%; /* Adjust width as needed */
+    max-width: 600px; /* Optional: Set a maximum width */
+    background-color: #fff;
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds container height */
+    max-height: 70vh; /* Limit height and enable scrolling */
+    margin-top: 20px; /* Adjust margin top as needed */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .profile-info {
-    margin-bottom: 20px;
+    padding-bottom: 20px; /* Optional: Add padding between posts */
+    margin-bottom: 25px; /* Optional: Adjust margin bottom between posts */
+    border-radius: 10px;
+    padding: 10px;
 }
 
 .profile-info p {
-    margin: 10px 0;
+    margin-bottom: 5px;
+    font-size: 14px;
 }
