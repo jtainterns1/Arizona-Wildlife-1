@@ -76,7 +76,7 @@ $username = $_SESSION['username'];
     if ($db->connect_error) {
         die("Connection failed: " . $db->connect_error);
     }
-    
+
     // Query to fetch posts
     $sql = "SELECT * FROM posts ORDER BY time_stamp DESC"; // Assuming you want to display posts in descending order of timestamp
     
@@ -102,7 +102,6 @@ $username = $_SESSION['username'];
         $db->close();
         ?>
     </div>
-    
     <!-- <div class="feed-container">
         
         <div class="post">
