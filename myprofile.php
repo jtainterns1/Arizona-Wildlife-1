@@ -92,6 +92,7 @@
             window.location.href = url;
         }
     </script>
+    
     <div class="profile-container">
         <h1 class="profile-header">My Profile</h1>
         <div class='profile-info'>
