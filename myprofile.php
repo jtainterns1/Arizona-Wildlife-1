@@ -93,7 +93,6 @@
             <?php
                 while($row = mysqli_fetch_assoc($result)){
             ?>
-
             <p>Username: <?php echo $row['username']; ?> </p>;
             <p>First Name: <?php echo $row['firstname']; ?> </p>;
             <p>Last Name: <?php echo $row['lastname']; ?> </p>;
