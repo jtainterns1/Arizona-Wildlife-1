@@ -92,19 +92,18 @@
             window.location.href = url;
         }
     </script>
-    
+
     <div class="profile-container">
         <h1 class="profile-header">My Profile</h1>
         <div class='profile-info'>
             <?php
                  $row = $result->fetch_assoc();
             ?>
-            <p>Username: <?php echo $row['username'] ?> </p>;
-            <p>First Name: <?php echo $row['firstname'] ?> </p>;
-            <p>Last Name: <?php echo $row['lastname'] ?> </p>;
-            <p>Email: <?php echo $row['email'] ?> </p>;
-            <p>Phone: <?php echo $row['phone'] ?> </p>;
-
+            <p>Username: <?php echo $row['username'] ?> </p>
+            <p>First Name: <?php echo $row['firstname'] ?> </p>
+            <p>Last Name: <?php echo $row['lastname'] ?> </p>
+            <p>Email: <?php echo $row['email'] ?> </p>
+            <p>Phone: <?php echo $row['phone'] ?> </p>
         </div>
     </div>
 </body>
