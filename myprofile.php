@@ -62,7 +62,7 @@
     <body>
     <div class="rectangle"></div>
     <div class="sidebar">
-        <button class="LinktoHome" onclick="navigateTo('Home.html')">
+    <button class="LinktoHome" onclick="navigateTo('index.html')">
             <img src="home.png">
         </button>
         <button class="LinktoProfile" onclick="navigateTo('myprofile.php')">
