@@ -5,7 +5,32 @@ ini_set('display_errors', 1);
 
 // Validate form data
 if (empty($_POST["firstname"]) || empty($_POST["lastname"]) || empty($_POST["email"]) || empty($_POST["phone"]) || empty($_POST["username"]) || empty($_POST["password_hash"])) {
-    die("All fields are required");
+    echo "All fields are required";
+}
+
+if (!(1 === preg_match('~[A-Z]~', $_POST["password_hash"]))){
+    echo "Your password must have at least one uppercase letter.";
+}
+
+if (!(1 === preg_match('~[a-z]~', $_POST["password_hash"]))){
+    echo "Your password must have at least one lowercase letter.";
+}
+
+if ( strlen($_POST["password_hash"]) < 12) {
+    echo "Your password must be more than 12 characters.";
+}
+
+if (!(1 === preg_match('~[0-9]~', $_POST["password_hash"]))) {
+    echo "Your password must contain a number.";
+}
+
+function specialChars($str) {
+    $specialChars = '!@#$%^&*()-_=+[{]};:\'",<.>/?\\|';
+    return strpbrk($str, $specialChars) !== false;
+}
+
+if (!(specialChars($str))) {
+    echo "Your password must contain a special character.";
 }
 
 // Sanitize inputs
@@ -16,6 +41,9 @@ $phone = htmlspecialchars($_POST["phone"]);
 $username = htmlspecialchars($_POST["username"]);
 $password = password_hash($_POST["password_hash"], PASSWORD_DEFAULT);
 
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    echo "Please enter a valid email address."; 
+}
 // Timestamp for registration date
 $reg_date = date('Y-m-d H:i:s');
 
@@ -40,7 +68,14 @@ $stmt->bind_param("sssssss", $firstname, $lastname, $email, $phone, $username, $
 // Execute statement
 if ($stmt->execute()) {
     // Registration successful, redirect to login page
-    header("Location: http://127.0.0.1/login.html");
+    // Get the current server's IP address dynamically
+    $server_ip = $_SERVER['SERVER_ADDR'];
+    
+    // Construct the redirect URL with the dynamic IP address
+    $redirect_url = "http://$server_ip/login.html";
+    
+    // Redirect to the login page
+    header("Location: $redirect_url");
     exit();
 } else {
     echo "Error: " . $stmt->error;
