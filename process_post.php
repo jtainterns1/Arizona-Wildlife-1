@@ -18,13 +18,20 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 // Database connection details
-$servername = "localhost";
-$username_db = "karina"; // Replace with your database username
-$password_db = "ArizonaWildlife1!"; // Replace with your database password
-$database = "wildlife_db";
+$servername = "localhost\SQLEXPRESS";
+$username_db = "sa"; // Replace with your database username
+$password_db = "1q2w3e4r!Q@W#E$R"; // Replace with your database password
+$database = "wildlife_web_2";
+
+$connectionOptions = array(
+    "database" -> "wildlife_web_2",
+    "uid" -> "sa",
+    "pwd" -> "1q2w3e4r!Q@W#E$R",
+    "TrustServerCertificate" -> 1,
+);
 
 //connection
-$db = new mysqli($servername, $username_db, $password_db, $database);
+$db = new mysqli($servername, $connectionOptions);
 
 if ($db->connect_error) {
     die("Connection failed: " . $db->connect_error);
